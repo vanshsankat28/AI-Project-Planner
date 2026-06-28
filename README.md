@@ -1,6 +1,10 @@
 # 🤖 AI Project Planner
 
-A web-based project planning application developed as part of our **Software Engineering** course. The application helps users organize projects, manage tasks, and visualize project progress through a simple and intuitive interface.
+A lightweight, web-based AI Project Planner built as part of our **Software Engineering** course presentation. Generate professional, structured project plans instantly — either through a rule-based engine or powered by Google Gemini AI.
+
+## 📸 Screenshots
+
+> Screenshots are stored in the `screenshots/` directory.
 
 ---
 
@@ -10,69 +14,76 @@ The AI Project Planner is designed to simplify project management by allowing us
 
 ---
 
-## ✨ Features
+## 📁 Project Structure
 
-- 📋 Project planning interface
-- 📅 Task organization
-- 🎯 Milestone management
+```
+AI Project Planner/
+├── index.html          ← Main application page
+├── css/
+│   └── style.css       ← All styles (layout, tables, print, animations)
+├── js/
+│   └── script.js       ← Rule-based & AI plan generators, PDF export
+├── assets/             ← Static assets (images, icons)
+├── screenshots/        ← UI screenshots
+├── docs/
+│   └── architecture.md ← Technical architecture overview
+├── README.md
+├── LICENSE             ← MIT License
+├── CONTRIBUTING.md     ← Contribution guidelines
+└── CHANGELOG.md        ← Version history
+```
+
+---
+
+## 🚀 Features
+
+- 🤖 AI-powered plan generator (Google Gemini) for structured, professional project plans
+- 📋 Rule-based plan generator — works offline, no API key required
+- 📊 Priority classification (High / Medium / Low) based on deadline
+- 📄 PDF / print export of generated plans
 - 💻 Responsive web interface
 - 🎨 Clean and modern UI
-- ⚡ Built using HTML, CSS and JavaScript
+- ⚡ Fully client-side — no build step, no server required
 
 ---
 
 ## 🛠️ Tech Stack
 
 - HTML5
-- CSS3
-- JavaScript (Vanilla)
+- CSS3 (Vanilla)
+- Vanilla JavaScript
+- Google Gemini API (optional, for AI plan generation)
 
 ---
 
-## 📁 Project Structure
+## 📖 Usage
 
-```
-AI-Project-Planner
-│
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── .gitignore
-```
+### Without AI (rule-based)
 
----
+1. Open `index.html` in any modern browser.
+2. Fill in **Project Name**, **Description**, **Team Size**, and **Deadline**.
+3. Click **Generate Plan**.
 
-## 🚀 Getting Started
+### With AI (Gemini-powered)
 
-1. Clone this repository
+1. Obtain a [Google Gemini API key](https://aistudio.google.com/app/apikey).
+2. Open `js/script.js` and replace `YOUR_GEMINI_API_KEY_HERE` with your key.
+3. Fill in all form fields and click **Generate AI Plan**.
 
-```bash
-git clone https://github.com/vanshsankat28/AI-Project-Planner.git
-```
-
-2. Open the project folder.
-
-3. Open `index.html` in your browser.
-
----
-
-## 🔮 Future Improvements
-
-- 🤖 AI-powered task suggestions
-- 🔐 User Authentication
-- 🗂 Database Integration
-- 👥 Team Collaboration
-- 🔔 Notifications
-- 🌙 Dark Mode
-- 📊 Analytics Dashboard
+> ⚠️ Never commit your API key to a public repository.
 
 ---
 
 ## 📄 License
 
-This project is created for educational purposes as part of the Software Engineering course.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-⭐ If you like this project, consider giving it a star!
+## 🤝 Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+*Created for Software Engineering Presentation — 4th Semester*

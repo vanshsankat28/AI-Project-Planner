@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Project Planner — generate rule-based or AI-powered software project plans instantly.">
     <title>AI Project Planner</title>
 
-    <link rel="stylesheet" href="style.css">
-
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+    <!-- ===== App Container ===== -->
     <div class="container">
 
         <h1>AI Project Planner Tool</h1>
         <p>Generate project plans automatically.</p>
 
+        <!-- ===== Input Form ===== -->
         <input id="projectName" type="text" placeholder="Project Name">
 
         <textarea id="description" placeholder="Project Description"></textarea>
 
         <input id="teamSize" type="number" placeholder="Team Size">
 
-        <input id="deadline" type="number" placeholder="Deadline">
+        <input id="deadline" type="number" placeholder="Deadline (Days)">
 
+        <!-- ===== Action Buttons ===== -->
         <button id="btn-generate-plan">
             Generate Plan
         </button>
@@ -39,11 +45,14 @@
             Download PDF
         </button>
 
+        <!-- ===== Output Panel ===== -->
+        <!-- Plan content is injected here by script.js -->
         <div id="output"></div>
 
     </div>
 
-    <script src="script.js" defer></script>
+    <!-- Main script — deferred to run after DOM is ready -->
+    <script src="js/script.js" defer></script>
 
 </body>
 

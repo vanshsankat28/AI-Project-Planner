@@ -1,8 +1,20 @@
+/* ==========================================================================
+   AI Project Planner — Main Stylesheet
+   Author : vanshsankat28
+   Version: 1.0.0
+   ========================================================================== */
+
+
+/* === Base / Reset === */
+
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
     padding: 40px;
 }
+
+
+/* === Layout === */
 
 .container {
     background: white;
@@ -11,8 +23,29 @@ body {
     margin: auto;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
+/* Output panel displayed after plan generation */
+#output {
+    margin-top: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #2563eb;
+    overflow-x: auto;
+}
+
+#output ul {
+    padding-left: 20px;
+}
+
+#output li {
+    margin-bottom: 5px;
+}
+
+
+/* === Form Elements === */
 
 input,
 textarea {
@@ -37,14 +70,8 @@ button:hover {
     background: #1d4ed8;
 }
 
-#output {
-    margin-top: 20px;
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    border-left: 5px solid #2563eb;
-    overflow-x: auto;
-}
+
+/* === Typography === */
 
 h1 {
     color: #1e293b;
@@ -52,19 +79,15 @@ h1 {
 
 h2 {
     color: #2563eb;
+    margin-top: 25px;
 }
 
 h3 {
     color: #334155;
 }
 
-#output ul {
-    padding-left: 20px;
-}
 
-#output li {
-    margin-bottom: 5px;
-}
+/* === Progress Bar === */
 
 .progress-bar {
     width: 100%;
@@ -77,6 +100,9 @@ h3 {
     height: 20px;
     background: #22c55e;
 }
+
+
+/* === Tables === */
 
 table {
     width: 100%;
@@ -96,19 +122,15 @@ th {
     font-size: 16px;
 }
 
-table th {
-    background: #2563eb !important;
-    color: white !important;
-}
-
-table td {
-    color: #1e293b !important;
-}
-
 td {
     padding: 10px;
     border: 1px solid #d1d5db;
     color: #1e293b;
+}
+
+/* Ensures Gemini-generated table cells use the correct text colour */
+table td {
+    color: #1e293b !important;
 }
 
 tr:nth-child(even) {
@@ -119,22 +141,21 @@ tr:hover {
     background: #e0f2fe;
 }
 
-h2 {
-    color: #2563eb;
-    margin-top: 25px;
-}
 
-h3 {
-    color: #334155;
-}
+/* === Animations === */
 
+/* Used by the AI loading indicator */
 @keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
+    0%   { opacity: 0.5; }
+    50%  { opacity: 1; }
     100% { opacity: 0.5; }
 }
 
+
+/* === Print / PDF Styles === */
+
 @media print {
+    /* Force colour rendering in print mode */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -151,7 +172,8 @@ h3 {
         margin-bottom: 30px;
     }
 
-    h2, h3 {
+    h2,
+    h3 {
         color: #2563eb;
     }
 

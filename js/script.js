@@ -1,3 +1,24 @@
+/**
+ * AI Project Planner — Main Script
+ *
+ * Provides two plan-generation modes:
+ *   1. Rule-based  : generatePlan()   — keyword-driven, no API required
+ *   2. AI-powered  : generateAIPlan() — calls Google Gemini API
+ *
+ * Additional helpers:
+ *   - resetForm()   : clears all inputs and output
+ *   - downloadPDF() : opens a print-ready window for PDF export
+ *
+ * Author : vanshsankat28
+ * Version: 1.0.0
+ */
+
+
+/* === Form Reset === */
+
+/**
+ * Clears all form inputs and the output panel.
+ */
 function resetForm() {
     document.getElementById("projectName").value = "";
     document.getElementById("description").value = "";
@@ -6,6 +27,14 @@ function resetForm() {
     document.getElementById("output").innerHTML = "";
 }
 
+
+/* === Rule-Based Plan Generator === */
+
+/**
+ * Generates a basic project plan based on keywords in the description.
+ * Detects "website" or "app" to choose a predefined phase list.
+ * Also computes a random initial progress % and a priority level from deadline.
+ */
 function generatePlan() {
     document.getElementById("output").innerHTML = "<p>Generating plan...</p>";
 
@@ -15,11 +44,12 @@ function generatePlan() {
         return;
     }
 
-    let teamSize = document.getElementById("teamSize").value;
-    let deadline = document.getElementById("deadline").value;
+    let teamSize    = document.getElementById("teamSize").value;
+    let deadline    = document.getElementById("deadline").value;
     let description = document.getElementById("description").value.toLowerCase();
-    let plan = "";
+    let plan        = "";
 
+    // Select phase list based on project type keywords
     if (description.includes("website")) {
         plan = `
         <li>Requirement Analysis - 2 Days</li>
@@ -46,9 +76,11 @@ function generatePlan() {
         `;
     }
 
+    // Simulate a random initial progress percentage (0–29 %)
     let progress = Math.floor(Math.random() * 30);
-    let priority = "";
 
+    // Determine priority from deadline
+    let priority = "";
     if (deadline <= 7) {
         priority = "High";
     } else if (deadline <= 15) {
@@ -57,6 +89,7 @@ function generatePlan() {
         priority = "Low";
     }
 
+    // Render the output HTML
     document.getElementById("output").innerHTML = `
     <h2>${projectName}</h2>
     <hr>
@@ -94,8 +127,15 @@ function generatePlan() {
     `;
 }
 
+
+/* === PDF / Print Export === */
+
+/**
+ * Opens a new browser window containing a print-ready version of the output,
+ * then triggers the browser's print dialog (Save as PDF).
+ */
 function downloadPDF() {
-    let report = document.getElementById("output").innerHTML;
+    let report      = document.getElementById("output").innerHTML;
     let projectName = document.getElementById("projectName").value || "Project Report";
     let printWindow = window.open("", "_blank");
 
@@ -162,11 +202,22 @@ function downloadPDF() {
     printWindow.print();
 }
 
+
+/* === AI-Powered Plan Generator === */
+
+/**
+ * Calls the Google Gemini API to generate a full, structured project plan.
+ * Displays a loading animation while the request is in-flight.
+ * Strips any Markdown or inline styles from the Gemini response before rendering.
+ *
+ * Requires a valid Gemini API key set in the fetch URL below.
+ */
 async function generateAIPlan() {
     let projectName = document.getElementById("projectName").value;
-    let teamSize = document.getElementById("teamSize").value;
-    let deadline = document.getElementById("deadline").value;
+    let teamSize    = document.getElementById("teamSize").value;
+    let deadline    = document.getElementById("deadline").value;
 
+    // Validate required fields
     if (teamSize === "" || deadline === "") {
         alert("Please enter Team Size and Deadline");
         return;
@@ -178,6 +229,7 @@ async function generateAIPlan() {
         return;
     }
 
+    // Show loading indicator while waiting for the API
     document.getElementById("output").innerHTML = `
     <h3>AI is generating your project plan...</h3>
     <p>Please wait...</p>
@@ -302,6 +354,7 @@ Return ONLY raw HTML.
             }
         );
 
+        // Handle API-level errors
         if (response.status === 503) {
             document.getElementById("output").innerHTML = `
             <h3>Gemini is busy right now</h3>
@@ -311,7 +364,7 @@ Return ONLY raw HTML.
         }
 
         if (!response.ok) {
-            let data = await response.json();
+            await response.json(); // consume the body
             document.getElementById("output").innerHTML = `
             <h3>AI Service Unavailable</h3>
             <p>Google Gemini is currently busy.</p>
@@ -332,20 +385,28 @@ Return ONLY raw HTML.
         }
 
         let result = data.candidates[0].content.parts[0].text;
+
+        // Strip Markdown code fences that Gemini may wrap around the HTML
         result = result.replace(/```html/g, "");
         result = result.replace(/```/g, "");
 
-        /* remove ALL inline styles generated by Gemini */
+        // Remove ALL inline styles generated by Gemini (our stylesheet handles appearance)
         result = result.replace(/style="[^"]*"/gi, "");
 
         document.getElementById("output").innerHTML = result;
 
     } catch (error) {
+        // Display network or runtime errors inline
         document.getElementById("output").innerHTML = `<p style="color:red;">${error.message}</p>`;
     }
 }
 
-// Bind event listeners on DOM load
+
+/* === Event Listeners === */
+
+/**
+ * Bind all button click handlers once the DOM is fully loaded.
+ */
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-generate-plan").addEventListener("click", generatePlan);
     document.getElementById("btn-generate-ai-plan").addEventListener("click", generateAIPlan);

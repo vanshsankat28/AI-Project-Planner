@@ -1,14 +1,65 @@
-# Environment variables / secrets
+# ==============================================================================
+# AI Project Planner — .gitignore
+# ==============================================================================
+
+# --- Secrets & Environment Variables ---
 .env
 .env.local
+.env.*.local
 *.env
 
-# macOS
+# --- Dependencies (if a package manager is ever introduced) ---
+node_modules/
+bower_components/
+
+# --- Build Output ---
+dist/
+build/
+out/
+.cache/
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Source Maps ---
+*.map
+
+# --- Temporary & Backup Files ---
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+
+# --- macOS ---
 .DS_Store
 .AppleDouble
 .LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Icon
 
-# Editor files
+# --- Windows ---
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Linux ---
+*~
+
+# --- Editor & IDE Files ---
 .vscode/
 .idea/
 *.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.settings/
