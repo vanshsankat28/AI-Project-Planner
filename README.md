@@ -15,7 +15,7 @@ A lightweight, web-based AI Project Planner built as part of our **Software Engi
 
 ## 🌐 Live Demo
 
-👉 https://vanshsankat28.github.io/AI-Project-Planner/
+[![Open Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://vanshsankat28.github.io/AI-Project-Planner/)
 
 ---
 
