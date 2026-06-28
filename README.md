@@ -2,9 +2,15 @@
 
 A lightweight, web-based AI Project Planner built as part of our **Software Engineering** course presentation. Generate professional, structured project plans instantly — either through a rule-based engine or powered by Google Gemini AI.
 
-## 📸 Screenshots
+---
 
-> Screenshots are stored in the `screenshots/` directory.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
 
@@ -14,30 +20,15 @@ A lightweight, web-based AI Project Planner built as part of our **Software Engi
 
 ---
 
-## 📖 About the Project
+## 📸 Screenshots
 
-The AI Project Planner is designed to simplify project management by allowing users to organize tasks, plan milestones, and manage workflows efficiently. Although this is currently a frontend prototype, it demonstrates the core structure and user interface of an AI-assisted project management system.
+> Screenshots are stored in the `screenshots/` directory.
 
 ---
 
-## 📁 Project Structure
+## 📖 About the Project
 
-```
-AI Project Planner/
-├── index.html          ← Main application page
-├── css/
-│   └── style.css       ← All styles (layout, tables, print, animations)
-├── js/
-│   └── script.js       ← Rule-based & AI plan generators, PDF export
-├── assets/             ← Static assets (images, icons)
-├── screenshots/        ← UI screenshots
-├── docs/
-│   └── architecture.md ← Technical architecture overview
-├── README.md
-├── LICENSE             ← MIT License
-├── CONTRIBUTING.md     ← Contribution guidelines
-└── CHANGELOG.md        ← Version history
-```
+The AI Project Planner is designed to simplify project management by allowing users to organize tasks, plan milestones, and manage workflows efficiently. Although this is currently a frontend prototype, it demonstrates the core structure and user interface of an AI-assisted project management system.
 
 ---
 
@@ -59,6 +50,27 @@ AI Project Planner/
 - CSS3 (Vanilla)
 - Vanilla JavaScript
 - Google Gemini API (optional, for AI plan generation)
+
+---
+
+## 📁 Project Structure
+
+```
+AI Project Planner/
+├── index.html          ← Main application page
+├── css/
+│   └── style.css       ← All styles (layout, tables, print, animations)
+├── js/
+│   └── script.js       ← Rule-based & AI plan generators, PDF export
+├── assets/             ← Static assets (images, icons)
+├── screenshots/        ← UI screenshots
+├── docs/
+│   └── architecture.md ← Technical architecture overview
+├── README.md
+├── LICENSE             ← MIT License
+├── CONTRIBUTING.md     ← Contribution guidelines
+└── CHANGELOG.md        ← Version history
+```
 
 ---
 
