@@ -8,6 +8,12 @@ A lightweight, web-based AI Project Planner built as part of our **Software Engi
 
 ---
 
+## 🌐 Live Demo
+
+👉 https://vanshsankat28.github.io/AI-Project-Planner/
+
+---
+
 ## 📖 About the Project
 
 The AI Project Planner is designed to simplify project management by allowing users to organize tasks, plan milestones, and manage workflows efficiently. Although this is currently a frontend prototype, it demonstrates the core structure and user interface of an AI-assisted project management system.
