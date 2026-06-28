@@ -412,4 +412,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-generate-ai-plan").addEventListener("click", generateAIPlan);
     document.getElementById("btn-reset-form").addEventListener("click", resetForm);
     document.getElementById("btn-download-pdf").addEventListener("click", downloadPDF);
+
+    // Auto-run demo if ?demo=true query param is present (used for automated screenshot generation)
+    if (window.location.search.includes("demo=true")) {
+        document.getElementById("projectName").value = "E-Commerce Website";
+        document.getElementById("description").value = "A professional website for selling books online.";
+        document.getElementById("teamSize").value = "3";
+        document.getElementById("deadline").value = "10";
+        generatePlan();
+    }
 });
+

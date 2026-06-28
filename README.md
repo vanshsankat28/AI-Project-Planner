@@ -21,7 +21,15 @@ A lightweight, web-based AI Project Planner built as part of our **Software Engi
 
 ## 📸 Screenshots
 
-> Screenshots are stored in the `screenshots/` directory.
+### Initial State
+![Initial State](screenshots/initial_state.png)
+
+### Generated Project Plan
+![Generated Plan](screenshots/generated_plan.png)
+
+### Interactive Demo
+![Interactive Demo](screenshots/demo.gif)
+
 
 ---
 
